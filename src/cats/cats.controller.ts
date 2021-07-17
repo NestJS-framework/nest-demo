@@ -1,6 +1,6 @@
 import { Cat } from './../interfaces/cat.interface';
 import { CreateCatDto } from './../create-cat.dto';
-import { Body, Controller, Get, Header, HostParam, HttpCode, Param, Post, Query, Redirect, Req , Request} from '@nestjs/common';
+import { Body, Controller, Get, Header, HostParam, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Query, Redirect, Req , Request} from '@nestjs/common';
 import { CatsService } from './cats.service';
 
 
@@ -17,4 +17,17 @@ export class CatsController {
     async findAll(): Promise<Cat[]> {
       return this.catsService.findAll();
     }
+
+    @Get(':id')
+async findOne(@Param('id', ParseIntPipe) id: number) {
+  // return this.catsService.findOne(id);
+}
+
+@Get(':id')
+async findOne2(
+  @Param('id', new ParseIntPipe({ errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE }))
+  id: number,
+) {
+  // return this.catsService.findOne(id);
+}
 }

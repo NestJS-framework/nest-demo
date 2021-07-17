@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Header, HostParam, HttpCode, Param, Post, Query, Redirect, Req , Request} from '@nestjs/common';
+import { Body, Controller, Get, Header, HostParam, HttpCode, HttpException, HttpStatus, Param, Post, Query, Redirect, Req , Request} from '@nestjs/common';
 import { Observable, of } from 'rxjs';
 import { AppService } from './app.service';
 import { CreateCatDto } from './create-cat.dto';
@@ -74,6 +74,17 @@ async asynchronicity(): Promise<any[]> {
 @Get()
 dataExtraction(): Observable<any[]> {
   return of([]);
+}
+
+
+// For typical HTTP REST/GraphQL API based applications, it's best practice to send standard HTTP response objects when certain error conditions occur.
+@Get()
+async throwingStandardExceptions() {
+  // throw new HttpException('Forbidden', HttpStatus.FORBIDDEN);
+  throw new HttpException({
+    status: HttpStatus.FORBIDDEN,
+    error: 'This is a custom message',
+  }, HttpStatus.FORBIDDEN);
 }
 
 @Get('docs')
