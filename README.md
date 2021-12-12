@@ -87,43 +87,6 @@ npm i --save class-validator class-transformer
  https://github.com/nestjs/nest/tree/master/sample
  https://docs.nestjs.com/
 
-Todo-
-creating, updating and deleting data from the database
- REST API
- DB Handle- SQL query
- stored procedure
- deployment
- Make login with some authentication
- caching mechanism- varnish, Memcached, Redis
-GraphQL
-web sockets
-Axios
-server-side templating languages Jade, EJS
-salt hashing- storing password in encryption mode
- manage sessions
- append headers
- write logs, 
- cookie management
- new user registration
- login
- create a blog- anyone can register get a public page, create , update and delete posts
-message brokers- RabbitMQ, kafka
-search engine- elastic search
-
- Different Authentication/authorization Methods we normally used-
-·   OAuth — Open Authentication
-·   Custom OAuth
-·   Basic Authentication
-·   Token Authentication
-·   JWT — JSON Web Tokens
-·   OpenID connect
-·   GCP Auth
-·   Auth.io
-·   Firebase Auth
-·   Amazon Cognito
-·   Microsoft ADFS
-·   Azure authentication
-·   Auth0
 
 Todo-
 NestJS Unit test
