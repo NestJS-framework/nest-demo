@@ -1,5 +1,6 @@
 export interface Cat {
-    name: string;
-    age: number;
-    breed: string;
-  }
+  id: number;
+  name: string;
+  age: number;
+  breed: string;
+}
